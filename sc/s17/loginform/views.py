@@ -17,7 +17,7 @@ class LoginViews(object):
     @view_config(renderer="templates/login.pt",
                  context=HTTPForbidden)
     @view_config(renderer="templates/login.pt", 
-                 context='login:resources.Root')
+                 context='sc.s17.loginform:resources.Root')
     def login(self):
         request = self.request
         who_api = get_api(request.environ)
