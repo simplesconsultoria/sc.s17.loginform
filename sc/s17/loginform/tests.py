@@ -7,9 +7,9 @@ class LoginViewTests(unittest.TestCase):
         self.config = testing.setUp()
 
     def _makeOne(self, request):
-        from sc.s17.loginforms import LoginViews
-
-        inst = LoginViews(request)
+        from sc.s17.loginform.views import LoginViews
+        context = testing.DummyResource()
+        inst = LoginViews(context, request)
         return inst
 
     def tearDown(self):
