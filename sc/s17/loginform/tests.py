@@ -25,9 +25,9 @@ class LoginViewTests(unittest.TestCase):
 
 class LoginViewFunctionalTests(unittest.TestCase):
     def setUp(self):
-        from sc.s17.loginforms import main
+        from sc.s17.loginform import main
 
-        app = main()
+        app = main({})
         from webtest import TestApp
 
         self.testapp = TestApp(app)
