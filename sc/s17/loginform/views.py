@@ -36,7 +36,8 @@ class LoginViews(object):
             message = 'Failed login'
         else:
             # Remove authentication
-            _, headers = who_api.login({})
+            if who_api:
+                _, headers = who_api.login({})
 
         if 'REMOTE_USER' in request.environ:
             del request.environ['REMOTE_USER']
