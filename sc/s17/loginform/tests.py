@@ -17,9 +17,10 @@ class LoginViewTests(unittest.TestCase):
 
     def test_login(self):
         request = testing.DummyRequest()
+        request.referrer = '/'
         inst = self._makeOne(request)
         result = inst.login()
-        self.assertEqual(result['page_title'], 'login')
+        self.assertEqual(result['page_title'], 'Login')
 
 
 class LoginViewFunctionalTests(unittest.TestCase):
