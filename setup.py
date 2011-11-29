@@ -15,7 +15,8 @@ tests_requires = requires + ['WebTest', 'nose']
 
 setup(name='sc.s17.loginform',
       version=version,
-      description="Pyramid Login Form to be used with wsgi servers",
+      description="""A standalone Pyramid app providing a Login Form to be 
+                     used with wsgi servers""",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
