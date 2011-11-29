@@ -1,21 +1,53 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" xmlns:tal="http://xml.zope.org/namespaces/tal">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Login</title>
+  <title>${page_title}</title>
+
 </head>
-<body>
-    <div id="corpo">
+
+<body id="loginpage" >
+  <div id="wrapper">
+    <div id="main">
     <h1>${page_title}</h1>
+        <p><em>${message}</em></p>
+   <form action="${url}" id="loginform" method="post" class="enableAutoFocus">
 
-    <p><em>${message}</em></p>
+    <fieldset id="loginform">
+        <legend>Please inform your data</legend>
+    
+        
+    <div class="field">
+        
+                <label for="__ac_name">Username:</label>
 
-    <form action="${url}" method="post">
-        <input type="hidden" name="came_from" value="${came_from}"/>
-        <input type="text" name="username" value="${login}"/><br/>
-        <input type="password" name="password"
-               value="${password}"/><br/>
-        <input type="submit" name="form.submitted" value="Log In"/>
-    </form>
+                <input type="text" id="login" value="${login}" name="login" size="15">
+                
     </div>
+
+    <div class="field">
+
+        <label for="__ac_password">Password:</label>
+
+        <input type="password" id="password" name="password" size="15">
+    
+    </div>
+
+    <div class="formControls">
+        <input type="hidden" name="came_from" value="${came_from}"/>
+        <input type="hidden" name="form.submitted" value="Log In"/>
+        <input type="submit" value="Access" name="submit" class="context">
+
+    </div>
+
+    </fieldset>
+
+   </form>
+
+
+    </div>
+
+  </div>
+
 </body>
+
 </html>
