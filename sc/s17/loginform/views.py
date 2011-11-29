@@ -21,7 +21,7 @@ class LoginViews(object):
     def login(self):
         request = self.request
         who_api = get_api(request.environ)
-        came_from = request.params.get("came_from", request.referer or "/")
+        came_from = request.params.get("came_from", request.referrer or "/")
         message = ''
         login = ''
         password = ''
