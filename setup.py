@@ -3,6 +3,16 @@ import os
 
 version = '1.0'
 
+requires = [
+      'setuptools',
+      # -*- Extra requirements: -*-
+      'pyramid',
+      'repoze.who',
+      'repoze.who.plugins.formcookie',
+]
+
+tests_requires = requires + ['WebTest', 'nose']
+
 setup(name='sc.s17.loginform',
       version=version,
       description="Pyramid Login Form to be used with wsgi servers",
@@ -25,13 +35,9 @@ setup(name='sc.s17.loginform',
       namespace_packages=['sc', 'sc.s17'],
       include_package_data=True,
       zip_safe=False,
-      install_requires=[
-          'setuptools',
-          # -*- Extra requirements: -*-
-          'pyramid',
-          'repoze.who',
-          'repoze.who.plugins.formcookie',
-      ],
+      install_requires=requires,
+      tests_require=tests_requires,
+      test_suite="sc.s17.loginform",
       entry_points="""
       # -*- Entry points: -*-
       [paste.app_factory]
