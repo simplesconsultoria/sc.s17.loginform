@@ -9,6 +9,7 @@ requires = [
       'pyramid',
       'repoze.who',
       'repoze.who.plugins.formcookie',
+      'Babel',
 ]
 
 tests_requires = requires + ['WebTest', 'nose']
@@ -37,6 +38,10 @@ setup(name='sc.s17.loginform',
       include_package_data=True,
       zip_safe=False,
       install_requires=requires,
+      message_extractors = { 'sc/': [
+            ('**.py',   'lingua_python', None ),
+            ('**.pt',   'lingua_xml', None ),
+            ]},
       tests_require=tests_requires,
       test_suite="sc.s17.loginform",
       entry_points="""
