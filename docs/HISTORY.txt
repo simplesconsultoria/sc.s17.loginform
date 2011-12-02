@@ -4,7 +4,7 @@ Changelog
 0.6 (unreleased)
 ----------------
 
-- Nothing changed yet.
+* i18n support [ericof]
 
 
 0.5 (2011-11-30)
