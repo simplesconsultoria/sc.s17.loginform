@@ -34,3 +34,10 @@ msgstr ""
 msgid "Username:"
 msgstr ""
 
+#: sc/s17/loginform/templates/login.pt:29
+msgid "Password:"
+msgstr ""
+
+#: sc/s17/loginform/templates/login.pt:39
+msgid "Access"
+msgstr ""
