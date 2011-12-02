@@ -1,7 +1,9 @@
 # -*- coding:utf-8 -*-
 from pyramid.config import Configurator
 from sc.s17.loginform.resources import Root
+from pyramid.i18n import TranslationStringFactory
 
+MessageFactory = TranslationStringFactory("sc.s17.loginform")
 
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
