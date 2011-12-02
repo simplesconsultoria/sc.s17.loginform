@@ -1,5 +1,4 @@
 # -*- coding:utf-8 -*-
-
 from repoze.who.api import get_api
 
 from pyramid.view import view_config
@@ -9,10 +8,14 @@ from pyramid.httpexceptions import HTTPForbidden
 from pyramid.security import remember
 from pyramid.security import forget
 
+from pyramid.i18n import get_localizer
+from sc.s17.loginform import MessageFactory as _
+
 class LoginViews(object):
     def __init__(self, context, request):
         self.context = context
         self.request = request
+        self.localizer = get_localizer(request)
 
     @view_config(renderer="templates/login.pt",
                  context=HTTPForbidden)
@@ -33,23 +36,22 @@ class LoginViews(object):
             if authenticated:
                 return HTTPFound(location=came_from,
                                  headers=headers)
-            message = 'Failed login'
+            message = _(u'Failed login')
         else:
             # Remove authentication
             if who_api:
-                _, headers = who_api.login({})
+                anon, headers = who_api.login({})
 
         if 'REMOTE_USER' in request.environ:
             del request.environ['REMOTE_USER']
 
-        return dict(
-            page_title="Login",
-            message=message,
-            url=request.application_url ,
-            came_from=came_from,
-            login=login,
-            password=password,
-            )
+        return dict(page_title=_(u'Login'),
+                    message=message,
+                    url=request.application_url ,
+                    came_from=came_from,
+                    login=login,
+                    password=password,
+                   )
 
     @view_config(name="logout")
     def logout(self):
