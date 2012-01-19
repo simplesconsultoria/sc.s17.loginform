@@ -5,11 +5,12 @@ from pyramid.view import view_config
 
 from pyramid.httpexceptions import HTTPFound
 from pyramid.httpexceptions import HTTPForbidden
-from pyramid.security import remember
+
 from pyramid.security import forget
 
 from pyramid.i18n import get_localizer
 from sc.s17.loginform import MessageFactory as _
+
 
 class LoginViews(object):
     def __init__(self, context, request):
@@ -19,7 +20,7 @@ class LoginViews(object):
 
     @view_config(renderer="templates/login.pt",
                  context=HTTPForbidden)
-    @view_config(renderer="templates/login.pt", 
+    @view_config(renderer="templates/login.pt",
                  context='sc.s17.loginform:resources.Root')
     def login(self):
         request = self.request
@@ -47,7 +48,7 @@ class LoginViews(object):
 
         return dict(page_title=_(u'Login'),
                     message=message,
-                    url=request.application_url ,
+                    url=request.application_url,
                     came_from=came_from,
                     login=login,
                     password=password,
@@ -58,4 +59,3 @@ class LoginViews(object):
         headers = forget(self.request)
         url = self.request.resource_url(self.context, 'login')
         return HTTPFound(location=url, headers=headers)
-
