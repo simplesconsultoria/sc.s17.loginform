@@ -30,7 +30,7 @@ class LoginViews(object):
         password = ''
         if 'form.submitted' in request.params:
             creds = {}
-            creds['login'] = request.params.get('username', '')
+            creds['login'] = request.params.get('login', '')
             creds['password'] = request.params.get('password', '')
             authenticated, headers = who_api.login(creds)
             if authenticated:
