@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.7 (unreleased)
+0.7 (2012-01-24)
 ----------------
 
 * PEP8 and pyflakes cleaning [ericof]
