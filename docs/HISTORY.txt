@@ -4,6 +4,8 @@ Changelog
 0.7 (unreleased)
 ----------------
 
+* PEP8 and pyflakes cleaning [ericof]
+
 * Fix form parameter handling [ericof]
 
 
