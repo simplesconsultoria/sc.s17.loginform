@@ -4,13 +4,13 @@ Changelog
 0.9 (unreleased)
 ----------------
 
-- Nothing changed yet.
+* Add README.rst to source distribution [ericof]
 
 
 0.8 (2012-01-25)
 ----------------
 
-- Nothing changed yet.
+* Add docs/HISTORY.txt to source distribution [ericof]
 
 
 0.7 (2012-01-24)
